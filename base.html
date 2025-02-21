@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowify - Beauty and Wellness</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <p1><a href="/">Glowify</a></p1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/haircare">Haircare</a></li>
+                <li><a href="/makeup">Makeup</a></li>
+                <li><a href="/skincare">Skincare</a></li>
+                <li><a href="/profile">My Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    {% block content %}
+    {% endblock %}
+    
+    <footer>
+        <p>Glowify - Beauty and Wellness &copy; 2025</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowify - Beauty and Wellness</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+   
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/">Glowify</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/shop">Shop</a>
+                </li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/aboutus">About us</a></li>
+                
+                <li><a href="/profile">My Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Welcome to Glowify</h1>
+            <p>Your go-to beauty and wellness store. Shop now for the best skincare, makeup, and more!</p>
+            <a href="/shop" class="cta-button">Shop Now</a>
+        </div>
+    </section>
+
+   
+    <section id="featured">
+        <h2>Featured Products</h2>
+        <div class="product-container">
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/RADIENCE SERUM.webp') }}" alt="My Image">
+                <h3>Radiance Serum</h3>
+                <p>RS.2500</p>
+                <button >Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/GLOW FOUNDATION.jpg') }}" alt="My Image">
+                <h3>Glow Foundation</h3>
+                <p>RS.3500</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/fc.webp') }}" alt="My Image">
+                <h3>Fresh Face Mask</h3>
+                <p>RS.750</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-container">
+            <div class="category-card">
+                 <img src="{{ url_for('static', filename='images/skincare.jpg') }}" alt="My Image">
+                <a href="/skincare"><b>SKINCARE</b></a>
+            </div>
+            <div class="category-card">
+                
+                <img src="{{ url_for('static', filename='images/makeup.jpg') }}" alt="My Image">
+                <a href="/makeup"> <b>MAKEUP</b></a>
+            </div>
+            <div class="category-card">
+                <img src="{{ url_for('static', filename='images/haircare.jpg') }}" alt="My Image">
+                <a href="/haircare"><b>HAIRCARE</b></a>
+            </div>
+        </div>
+    </section>
+
+  
+    <footer>
+        <div class="footer-links">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+        </div>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+</body>
+</html>

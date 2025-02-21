@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | Nykaa Clone</title>
+    <link rel="stylesheet" href="../static/cart.css">
+</head>
+
+<body>
+    <div class="cart-container">
+        
+        <h1 class="cart-title">🛒 Your Shopping Cart</h1>
+
+        {% if cart.items %}
+       
+        <table class="cart-items">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart.cart_items %} 
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>₹{{ item.price }}</td>
+                    <td>
+                        <form method="POST" action="{{ url_for('update_cart', product_name=item.name) }}">
+                            <input type="number" name="quantity" value="{{ item.quantity }}" min="1" required>
+                            <button type="submit" class="cart-btn">Update</button>
+                        </form>
+                    </td>
+                    <td>₹{{ item.total }}</td>
+                    <td>
+                        <a href="{{ url_for('remove_item', product_name=item.name) }}"
+                            class="cart-btn remove-btn">Remove</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="cart-summary">
+            <p><strong>Total Items: {{ cart.item_count }}</strong></p>
+            <p><strong>Total Price: ₹{{ cart.total }}</strong></p>
+            <a href="{{ url_for('checkout') }}" class="cart-btn checkout-btn">Proceed to Checkout</a>
+        </div>
+
+        {% else %}
+        <p class="empty-cart">Your cart is empty. Start shopping now!</p>
+        {% endif %}
+
+      
+        <div class="return-home">
+            <a href="{{ url_for('homepage') }}" class="cart-btn home-btn">🏠 Back to Shopping</a>
+        </div>
+    </div>
+
+    
+    <script>
+        
+    </script>
+</body>
+
+</html>
